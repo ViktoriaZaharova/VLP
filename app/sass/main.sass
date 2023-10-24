@@ -1,0 +1,1985 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+//Сброс стилей
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	display: block
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote
+	&:before, &:after
+		content: ''
+		content: none
+
+q
+	&:before, &:after
+		content: ''
+		content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+//Общие стили
+body
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: 26px
+	font-family: $default-font
+	box-sizing: border-box
+
+html, body
+	overflow-x: hidden
+
+*
+	box-sizing: border-box
+
+.img-responsive
+	display: inline-block
+	max-width: 100%
+	height: auto
+
+.wrapper
+	min-height: 100%
+	position: relative
+
+.container
+	width: 1230px
+	display: flex
+	margin: auto
+	position: relative
+	box-sizing: border-box
+
+.content
+	position: relative
+
+footer
+	bottom: 0
+	padding: 30px 0 15px 0
+	width: 100%
+
+a
+	outline: none
+	text-decoration: none
+	transition: .3s ease
+	&:hover, &:active
+		text-decoration: none
+
+button
+	outline: none
+	cursor: pointer
+	background: $accent
+	border-top: 0
+	border-right: 0
+	border-left: 0
+	border-bottom: 3px solid	#9a3200
+	color: #ffffff
+	font-family: $title-font
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+	font-size: 15px
+	transition: .3s ease
+	&:hover
+		background: #ff712e
+	&:active, &:focus
+		background: #dd4700
+		border-bottom: 0
+		border-top: 3px	solid	#9a3200
+h1, h2
+	font-family: $title-font
+	font-size: 50px
+	text-transform: uppercase
+	position: relative
+
+h2
+	font-size: 40px
+
+//Шапка сайта
+.wrapper
+	header
+		background-color: #000
+		color: #fff
+		position: relative
+		height: 100px
+		.container
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			.logo
+				max-width: 200px
+			.block-address
+				.address, .time
+					position: relative
+					padding-left: 20px
+					&:before
+						content: '\f041'
+						position: absolute
+						font-size: 20px
+						font-family: "fontawesome", sans-serif
+						color: $accent
+						top: 0
+						left: 0
+				.time
+					span
+						vertical-align: super
+						font-size: 9px
+					&:before
+						content: '\f017'
+						font-size: 17px
+
+header.fixed
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	//height: 52px
+	z-index: 100
+	background: #000
+	box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3)
+	-webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3)
+	-moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3)
+
+//Меню
+.wrapper
+	header
+		.container
+			.mnu-line
+				width: 595px
+				#mobile_mnu
+					display: none
+					position: relative
+				ul
+					display: flex
+					flex-direction: row
+					justify-content: space-between
+					position: relative
+					&:before
+						content: ""
+						position: absolute
+						height: 2px
+						width: 100%
+						right: 0
+						bottom: 0
+						top: 24px
+						margin: auto
+						background-color: rgba(255,255,255,.6)
+					li
+						position: relative
+						overflow: hidden
+						display: flex
+						flex-grow: 1
+						justify-content: center
+						&:nth-child(1)
+							justify-content: flex-start
+						&:last-child
+							justify-content: flex-end
+						&:after
+							content: ""
+							position: absolute
+							height: 2px
+							width: 0%
+							background: $accent
+							transition: width .3s ease-in-out
+							bottom: 0
+							left: 0
+						&:hover, &:focus, &:active, &:visited
+							&:after
+								width: 100%
+						a
+							color: #fff
+							text-decoration: none
+
+//Контент
+.content
+	.page-carousel
+		position: relative
+		.header-slider
+			position: relative
+			max-height: 780px
+			width: 100%
+			display: flex
+			flex-direction: row
+			.carousel_item
+				position: relative
+				width: 100%
+				height: 100%
+			.owl-nav
+				.owl-next, .owl-prev
+					position: absolute
+					display: block
+					right: 7%
+					top: 39%
+					background-color: rgba(252,250,250,.32)
+					border: 1px solid $accent
+					width: 23px
+					height: 44px
+					transition: .3s ease
+					box-sizing: border-box
+					.fa
+						color: $accent
+						opacity: .7
+						font-size: 42px
+						height: 100%
+						width: 100%
+						text-align: center
+					&:hover
+						background: $accent
+						border-color: #fff
+						.fa
+							color: #fff
+				.owl-prev
+					right: 0
+					left: 7%
+		.block-title
+			width: 970px
+			position: absolute
+			margin: 0 auto
+			top: 17%
+			height: 360px
+			right: 0
+			left: 0
+			bottom: 0
+			z-index: 2
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			flex-direction: row
+			.container
+				width: 970px
+				height: 360px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				align-items: center
+				color: #fff
+				background-color: rgba(0,0,0,.5)
+				padding: 30px 70px
+				h1
+					text-align: center
+					line-height: 60px
+					span
+						display: block
+						text-transform: none
+				p
+					font-size: 20px
+					text-align: center
+				button
+					width: 430px
+					height: 50px
+					display: flex
+					align-items: center
+					justify-content: center
+				a
+					font-size: 40px
+					color: #fff
+					line-height: 26px
+					&:hover
+						color: $accent
+		.block-arrows
+			position: absolute
+			bottom: 120px
+			right: 0
+			left: 0
+			margin: auto
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			border: 1px solid	#FFFFFF
+			z-index: 20
+			transition: .3s ease
+			cursor: pointer
+			.fa
+				color: #fff
+				font-size: 40px
+				width: 100%
+				height: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+			&:hover
+				border-color: $accent
+				.fa
+					color: $accent
+	#about
+		display: flex
+		flex-direction: column
+		position: relative
+		&:before, &:after
+			content: ''
+			height: 100%
+			width: 50%
+			position: absolute
+			bottom: 0
+			background: #000
+		&:before
+			right: 0
+		&:after
+			left: 0
+			background: #f2f2f2
+		.container
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			.block-left
+				background: url("../img/bg2.png") no-repeat 320px 500px
+				width: 50%
+				display: flex
+				flex-direction: column
+				padding: 50px 24px 100px 24px
+				z-index: 2
+				h2
+					text-align: center
+					font-size: 30px
+					padding-bottom: 15px
+					margin-bottom: 15px
+					border-bottom: 1px solid	#c8c8c8
+				p
+					margin-bottom: 25px
+					&:nth-child(4), &:last-child
+						margin-bottom: 0
+						font-family: $title-font
+				ul
+					margin-bottom: 20px
+					margin-top: 5px
+					li
+						position: relative
+						padding-left: 15px
+						margin-bottom: 5px
+						&:before
+							content: '\f192'
+							position: absolute
+							left: 0
+							font-family: 'fontawesome', sans-serif
+							font-size: 13px
+							color: $accent
+			.block-right
+				width: 50%
+				display: flex
+				flex-direction: column
+				padding: 87px 15px 100px 15px
+				color: #FFFFFF
+				.item
+					display: flex
+					flex-direction: row
+					align-items: center
+					justify-content: flex-start
+					margin-bottom: 40px
+					.block-img
+						border: 1px solid #FFFFFF
+						border-radius: 50%
+						width: 70px
+						height: 70px
+						margin-right: 30px
+						display: flex
+						align-items: center
+						justify-content: center
+					.block-text
+						display: flex
+						flex-direction: column
+						flex-wrap: wrap
+						line-height: 20px
+						h4
+							font-family: $title-font
+							margin-bottom: 5px
+						p
+							max-width: 470px
+
+	.about-bottom
+		.container
+			z-index: 2
+			.block-bottom
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				background-color: #fff
+				width: 970px
+				margin: -55px auto 0
+				padding: 15px 30px
+				-webkit-box-shadow: 0 3px 3px 0px #b7b7b7
+				box-shadow: 0 3px 3px 0px #b7b7b7
+				.item
+					display: flex
+					flex-direction: column
+					align-items: center
+					width: 270px
+					line-height: 20px
+					h3
+						font-family: $title-font
+						text-transform: uppercase
+						color: $accent
+						font-size: 27px
+						margin-bottom: 12px
+						span
+							color: #000
+							font-size: 16px
+					p
+						text-align: center
+
+	#services
+		margin-bottom: 70px
+		.container
+			flex-direction: column
+			h2
+				text-align: center
+				padding: 70px 0 15px 0
+				margin-bottom: 55px
+				&:before
+					content: ''
+					height: 3px
+					width: 200px
+					position: absolute
+					bottom: 0
+					background: linear-gradient(to right, #ff5200 0%,#ff5200 50%,#000000 50%,#000000 100%)
+					right: 0
+					left: 0
+					margin: auto
+			.block-content
+				display: flex
+				flex-direction: column
+				flex-wrap: wrap
+				.line-one, .line-two
+					display: flex
+					flex-direction: row
+					justify-content: space-between
+					flex-wrap: wrap
+					.item
+						width: 270px
+						display: flex
+						flex-direction: column
+						align-items: center
+						.block-title
+							color: #fff
+							-webkit-box-shadow: 0 3px 3px 0px #b7b7b7
+							box-shadow: 0 3px 3px 0px #b7b7b7
+							background: $accent
+							width: 100%
+							height: 43px
+							display: flex
+							align-content: center
+							justify-content: center
+							padding: 2px 15px
+							box-sizing: border-box
+							h3
+								text-align: center
+								line-height: 18px
+								font-size: 16px
+						.block-img
+							margin: 16px 0 21px 0
+							width: 243px
+							height: 194px
+						.block-text
+							width: 100%
+							min-height: 194px
+							font-size: 12px
+							background-color: $block-color
+							font-family: 'HelveticaRegular', sans-serif
+							padding: 7px 5px
+							line-height: 18px
+							text-align: center
+							-webkit-box-shadow: 0 3px 3px 0px #b7b7b7
+							box-shadow: 0 3px 3px 0px #b7b7b7
+							ul
+								li
+									text-align: left
+				.line-two
+					.item
+						.block-text
+							min-height: 160px
+				button
+					width: 253px
+					height: 53px
+					font-size: 20px
+					line-height: 20px
+					margin: 50px auto
+	.callback
+		background: url("../img/bg3.png") no-repeat center
+		.container
+			flex-direction: row
+			justify-content: space-between
+			align-items: flex-end
+			padding: 55px 0 53px 0
+			.block-left
+				display: flex
+				flex-direction: column
+				color: #FFFFFF
+				text-transform: uppercase
+				font-size: 18px
+				p
+					font-family: $text-font
+				h4
+					font-family: 'OpenSansSemiBold', sans-serif
+			form
+				input
+					height: 40px
+					width: 170px
+					color: #b8b8b8
+					font-size: 14px
+					font-family: $default-font
+					padding-left: 30px
+					outline: none
+					position: relative
+					box-sizing: border-box
+					border: none
+				.name
+					background: url("../img/user.png") no-repeat 10px center #fff
+				.user-phone
+					background: url("../img/phone.png") no-repeat 10px center #fff
+					width: 270px
+					margin: 0 30px
+				button
+					height: 40px
+					width: 170px
+	#portfolio
+		.container
+			flex-direction: column
+			h2
+				text-align: center
+				padding: 70px 0 10px 0
+				margin-bottom: 55px
+				&:before
+					content: ''
+					height: 3px
+					width: 200px
+					position: absolute
+					bottom: 0
+					background: linear-gradient(to right, #ff5200 0%,#ff5200 50%,#000000 50%,#000000 100%)
+					right: 0
+					left: 0
+					margin: auto
+			.portfolio-slide
+				max-width:  100%
+				padding: 0 34px
+				margin: auto
+				text-align: center
+				box-sizing: border-box
+				.carousel_item
+					border: 1px solid $accent
+					width: 230px
+					display: inline-block
+					margin: auto
+					text-align: center
+					position: relative
+					transition: .3s ease
+					&:before
+						content: '\f00e'
+						font-family: 'fontawesome', sans-serif
+						position: absolute
+						top: 10px
+						right: 10px
+						display: none
+						color: #ffff
+					&:hover
+						box-shadow: 5px 5px 5px 0 #b7b7b7
+						&:before
+							display: block
+				.owl-nav
+					display: block
+					.owl-next, .owl-prev
+						position: absolute
+						display: block
+						right: 0
+						top: 35%
+						background-color: rgba(252,250,250,.32)
+						border: 1px solid $accent
+						width: 23px
+						height: 44px
+						transition: .3s ease
+						box-sizing: border-box
+						.fa
+							color: $accent
+							opacity: .7
+							font-size: 42px
+							height: 100%
+							width: 100%
+							text-align: center
+						&:hover
+							background: $accent
+							border-color: #fff
+							.fa
+								color: #fff
+					.owl-prev
+						right: 0
+						left: 0
+	#ral
+		margin-top: 70px
+		background-color: #f2f2f2
+		padding-bottom: 100px
+		.container
+			flex-direction: column
+			h2
+				text-align: center
+				padding: 50px 0 10px 0
+				margin-bottom: 20px
+				&:before
+					content: ''
+					height: 3px
+					width: 200px
+					position: absolute
+					bottom: 0
+					background: linear-gradient(to right, #ff5200 0%,#ff5200 50%,#000000 50%,#000000 100%)
+					right: 0
+					left: 0
+					margin: auto
+			p
+				text-align: center
+				font-size: 22px
+				line-height: 35px
+				font-family: $text-font
+			.block-content
+				margin-top: 30px
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				flex-wrap: wrap
+				.item
+					width: 140px
+					height: 130px
+					display: flex
+					flex-direction: column
+					align-items: center
+					justify-content: space-between
+					margin-bottom: 20px
+					border: 1px solid $accent
+					border-radius: 5px
+					padding: 5px 3px
+					background-color: #fff
+					cursor: pointer
+					transition: .3s ease
+					&:hover
+						box-shadow: 0 0 5px 2px $accent
+					p
+						font-size: 16px
+						font-family: $title-font
+						text-decoration: underline
+						line-height: 20px
+					span
+						font-size: 12px
+						margin-bottom: 5px
+						text-align: center
+						line-height: 14px
+					.block-img
+						width: 60px
+						height: 60px
+						-webkit-border-radius: 50%
+						-moz-border-radius: 50%
+						border-radius: 50%
+					&:nth-child(1)
+						.block-img
+							background-color: #CCC58F
+					&:nth-child(2)
+						.block-img
+							background-color: #D1BC8A
+					&:nth-child(3)
+						.block-img
+							background-color: #D2B773
+					&:nth-child(4)
+						.block-img
+							background-color: #F7BA0B
+					&:nth-child(5)
+						.block-img
+							background-color: #E2B007
+					&:nth-child(6)
+						.block-img
+							background-color: #C89F04
+					&:nth-child(7)
+						.block-img
+							background-color: #E1A100
+					&:nth-child(8)
+						.block-img
+							background-color: #E79C00
+					&:nth-child(9)
+						.block-img
+							background-color: #AF8A54
+					&:nth-child(10)
+						.block-img
+							background-color: #D9C022
+					&:nth-child(11)
+						.block-img
+							background-color: #E9E5CE
+					&:nth-child(12)
+						.block-img
+							background-color: #DED09F
+					&:nth-child(13)
+						.block-img
+							background-color: #EADEBD
+					&:nth-child(14)
+						.block-img
+							background-color: #EAF044
+					&:nth-child(15)
+						.block-img
+							background-color: #F4B752
+					&:nth-child(16)
+						.block-img
+							background-color: #F3E03B
+					&:nth-child(17)
+						.block-img
+							background-color: #A4957D
+					&:nth-child(18)
+						.block-img
+							background-color: #9A9464
+					&:nth-child(19)
+						.block-img
+							background-color: #EEC900
+					&:nth-child(20)
+						.block-img
+							background-color: #F0CA00
+					&:nth-child(21)
+						.block-img
+							background-color: #B89C50
+					&:nth-child(22)
+						.block-img
+							background-color: #F5FF00
+					&:nth-child(23)
+						.block-img
+							background-color: #A38C15
+					&:nth-child(24)
+						.block-img
+							background-color: #FFAB00
+					&:nth-child(25)
+						.block-img
+							background-color: #DDB20F
+					&:nth-child(26)
+						.block-img
+							background-color: #FAAB21
+					&:nth-child(27)
+						.block-img
+							background-color: #EDAB56
+					&:nth-child(28)
+						.block-img
+							background-color: #A29985
+					&:nth-child(29)
+						.block-img
+							background-color: #927549
+					&:nth-child(30)
+						.block-img
+							background-color: #EEA205
+					&:nth-child(31)
+						.block-img
+							background-color: #DD7907
+					&:nth-child(32)
+						.block-img
+							background-color: #BE4E24
+					&:nth-child(33)
+						.block-img
+							background-color: #C63927
+					&:nth-child(34)
+						.block-img
+							background-color: #FA842B
+					&:nth-child(35)
+						.block-img
+							background-color: #E75B12
+					&:nth-child(36)
+						.block-img
+							background-color: #FF2300
+					&:nth-child(37)
+						.block-img
+							background-color: #FFA421
+					&:nth-child(38)
+						.block-img
+							background-color: #F3752C
+					&:nth-child(39)
+						.block-img
+							background-color: #E15501
+					&:nth-child(40)
+						.block-img
+							background-color: #D4652F
+					&:nth-child(41)
+						.block-img
+							background-color: #EC7C25
+					&:nth-child(42)
+						.block-img
+							background-color: #DB6A50
+					&:nth-child(43)
+						.block-img
+							background-color: #954527
+
+					&:nth-child(44)
+						.block-img
+							background-color: #AB2524
+					&:nth-child(45)
+						.block-img
+							background-color: #A02128
+					&:nth-child(46)
+						.block-img
+							background-color: #A1232B
+					&:nth-child(47)
+						.block-img
+							background-color: #8D1D2C
+					&:nth-child(48)
+						.block-img
+							background-color: #701F29
+					&:nth-child(49)
+						.block-img
+							background-color: #5E2028
+					&:nth-child(50)
+						.block-img
+							background-color: #402225
+					&:nth-child(51)
+						.block-img
+							background-color: #703731
+					&:nth-child(52)
+						.block-img
+							background-color: #7E292C
+					&:nth-child(53)
+						.block-img
+							background-color: #CB8D73
+					&:nth-child(54)
+						.block-img
+							background-color: #9C322E
+					&:nth-child(55)
+						.block-img
+							background-color: #D47479
+					&:nth-child(56)
+						.block-img
+							background-color: #E1A6AD
+					&:nth-child(57)
+						.block-img
+							background-color: #AC4034
+					&:nth-child(58)
+						.block-img
+							background-color: #D3545F
+					&:nth-child(59)
+						.block-img
+							background-color: #D14152
+					&:nth-child(60)
+						.block-img
+							background-color: #C1121C
+					&:nth-child(61)
+						.block-img
+							background-color: #D56D56
+					&:nth-child(62)
+						.block-img
+							background-color: #F70000
+					&:nth-child(63)
+						.block-img
+							background-color: #FF0000
+					&:nth-child(64)
+						.block-img
+							background-color: #B42041
+					&:nth-child(65)
+						.block-img
+							background-color: #CB3334
+					&:nth-child(66)
+						.block-img
+							background-color: #AC323B
+					&:nth-child(67)
+						.block-img
+							background-color: #711521
+					&:nth-child(68)
+						.block-img
+							background-color: #B24C43
+
+					&:nth-child(69)
+						.block-img
+							background-color: #8A5A83
+					&:nth-child(70)
+						.block-img
+							background-color: #933D50
+					&:nth-child(71)
+						.block-img
+							background-color: #D15B8F
+					&:nth-child(72)
+						.block-img
+							background-color: #691639
+					&:nth-child(73)
+						.block-img
+							background-color: #83639D
+					&:nth-child(74)
+						.block-img
+							background-color: #992572
+					&:nth-child(75)
+						.block-img
+							background-color: #4A203B
+					&:nth-child(76)
+						.block-img
+							background-color: #904684
+					&:nth-child(77)
+						.block-img
+							background-color: #A38995
+					&:nth-child(78)
+						.block-img
+							background-color: #C63678
+					&:nth-child(79)
+						.block-img
+							background-color: #8773A1
+					&:nth-child(80)
+						.block-img
+							background-color: #6B6880
+
+					&:nth-child(81)
+						.block-img
+							background-color: #384C70
+					&:nth-child(82)
+						.block-img
+							background-color: #1F4764
+					&:nth-child(83)
+						.block-img
+							background-color: #2B2C7C
+					&:nth-child(84)
+						.block-img
+							background-color: #2A3756
+					&:nth-child(85)
+						.block-img
+							background-color: #1D1F2A
+					&:nth-child(86)
+						.block-img
+							background-color: #154889
+					&:nth-child(87)
+						.block-img
+							background-color: #41678D
+					&:nth-child(88)
+						.block-img
+							background-color: #313C48
+					&:nth-child(89)
+						.block-img
+							background-color: #2E5978
+					&:nth-child(90)
+						.block-img
+							background-color: #13447C
+					&:nth-child(91)
+						.block-img
+							background-color: #232C3F
+					&:nth-child(92)
+						.block-img
+							background-color: #3481B8
+					&:nth-child(93)
+						.block-img
+							background-color: #232D53
+					&:nth-child(94)
+						.block-img
+							background-color: #6C7C98
+					&:nth-child(95)
+						.block-img
+							background-color: #2874B2
+					&:nth-child(96)
+						.block-img
+							background-color: #0E518D
+					&:nth-child(97)
+						.block-img
+							background-color: #21888F
+					&:nth-child(98)
+						.block-img
+							background-color: #1A5784
+					&:nth-child(99)
+						.block-img
+							background-color: #0B4151
+					&:nth-child(100)
+						.block-img
+							background-color: #07737A
+					&:nth-child(101)
+						.block-img
+							background-color: #2F2A5A
+					&:nth-child(102)
+						.block-img
+							background-color: #4D668E
+					&:nth-child(103)
+						.block-img
+							background-color: #6A93B0
+					&:nth-child(104)
+						.block-img
+							background-color: #296478
+					&:nth-child(105)
+						.block-img
+							background-color: #102C54
+
+					&:nth-child(106)
+						.block-img
+							background-color: #327662
+					&:nth-child(107)
+						.block-img
+							background-color: #28713E
+					&:nth-child(108)
+						.block-img
+							background-color: #276235
+					&:nth-child(109)
+						.block-img
+							background-color: #4B573E
+					&:nth-child(110)
+						.block-img
+							background-color: #0E4243
+					&:nth-child(111)
+						.block-img
+							background-color: #0F4336
+					&:nth-child(112)
+						.block-img
+							background-color: #40433B
+					&:nth-child(113)
+						.block-img
+							background-color: #283424
+					&:nth-child(114)
+						.block-img
+							background-color: #35382E
+					&:nth-child(115)
+						.block-img
+							background-color: #26392F
+					&:nth-child(116)
+						.block-img
+							background-color: #3E753B
+					&:nth-child(117)
+						.block-img
+							background-color: #66825B
+					&:nth-child(118)
+						.block-img
+							background-color: #31403D
+					&:nth-child(119)
+						.block-img
+							background-color: #797C5A
+					&:nth-child(120)
+						.block-img
+							background-color: #444337
+					&:nth-child(121)
+						.block-img
+							background-color: #3D403A
+					&:nth-child(122)
+						.block-img
+							background-color: #026A52
+					&:nth-child(123)
+						.block-img
+							background-color: #468641
+					&:nth-child(124)
+						.block-img
+							background-color: #48A43F
+					&:nth-child(125)
+						.block-img
+							background-color: #B7D9B1
+					&:nth-child(126)
+						.block-img
+							background-color: #354733
+					&:nth-child(127)
+						.block-img
+							background-color: #86A47C
+					&:nth-child(128)
+						.block-img
+							background-color: #3E3C32
+					&:nth-child(129)
+						.block-img
+							background-color: #008754
+					&:nth-child(130)
+						.block-img
+							background-color: #53753C
+					&:nth-child(131)
+						.block-img
+							background-color: #005D52
+					&:nth-child(132)
+						.block-img
+							background-color: #81C0BB
+					&:nth-child(133)
+						.block-img
+							background-color: #2D5546
+					&:nth-child(134)
+						.block-img
+							background-color: #007243
+					&:nth-child(135)
+						.block-img
+							background-color: #0F8558
+					&:nth-child(136)
+						.block-img
+							background-color: #478A84
+					&:nth-child(137)
+						.block-img
+							background-color: #7FB0B2
+					&:nth-child(138)
+						.block-img
+							background-color: #1B542C
+					&:nth-child(139)
+						.block-img
+							background-color: #005D4C
+					&:nth-child(140)
+						.block-img
+							background-color: #008F39
+					&:nth-child(141)
+						.block-img
+							background-color: #00BB2E
+
+					&:nth-child(142)
+						.block-img
+							background-color: #7E8B92
+					&:nth-child(143)
+						.block-img
+							background-color: #8F999F
+					&:nth-child(144)
+						.block-img
+							background-color: #817F68
+					&:nth-child(145)
+						.block-img
+							background-color: #7A7B6D
+					&:nth-child(146)
+						.block-img
+							background-color: #9EA0A1
+					&:nth-child(147)
+						.block-img
+							background-color: #6B716F
+					&:nth-child(148)
+						.block-img
+							background-color: #756F61
+					&:nth-child(149)
+						.block-img
+							background-color: #746643
+					&:nth-child(150)
+						.block-img
+							background-color: #5B6259
+					&:nth-child(151)
+						.block-img
+							background-color: #575D57
+					&:nth-child(152)
+						.block-img
+							background-color: #555D61
+					&:nth-child(153)
+						.block-img
+							background-color: #596163
+					&:nth-child(154)
+						.block-img
+							background-color: #555548
+					&:nth-child(155)
+						.block-img
+							background-color: #51565C
+					&:nth-child(156)
+						.block-img
+							background-color: #373F43
+					&:nth-child(157)
+						.block-img
+							background-color: #2E3234
+					&:nth-child(158)
+						.block-img
+							background-color: #4B4D46
+					&:nth-child(159)
+						.block-img
+							background-color: #818479
+					&:nth-child(160)
+						.block-img
+							background-color: #474A50
+					&:nth-child(161)
+						.block-img
+							background-color: #374447
+					&:nth-child(162)
+						.block-img
+							background-color: #939388
+					&:nth-child(163)
+						.block-img
+							background-color: #5D6970
+					&:nth-child(164)
+						.block-img
+							background-color: #B9B9A8
+					&:nth-child(165)
+						.block-img
+							background-color: #818979
+					&:nth-child(166)
+						.block-img
+							background-color: #939176
+					&:nth-child(167)
+						.block-img
+							background-color: #CBD0CC
+					&:nth-child(168)
+						.block-img
+							background-color: #9A9697
+					&:nth-child(169)
+						.block-img
+							background-color: #7C7F7E
+					&:nth-child(170)
+						.block-img
+							background-color: #B4B8B0
+					&:nth-child(171)
+						.block-img
+							background-color: #6B695F
+					&:nth-child(172)
+						.block-img
+							background-color: #9DA3A6
+					&:nth-child(173)
+						.block-img
+							background-color: #8F9695
+					&:nth-child(174)
+						.block-img
+							background-color: #4E5451
+					&:nth-child(175)
+						.block-img
+							background-color: #BDBDB2
+					&:nth-child(175)
+						.block-img
+							background-color: #91969A
+					&:nth-child(176)
+						.block-img
+							background-color: #82898E
+					&:nth-child(177)
+						.block-img
+							background-color: #CFD0CF
+					&:nth-child(178)
+						.block-img
+							background-color: #888175
+
+					&:nth-child(179)
+						.block-img
+							background-color: #887142
+					&:nth-child(180)
+						.block-img
+							background-color: #9C6B30
+					&:nth-child(181)
+						.block-img
+							background-color: #7B5141
+					&:nth-child(182)
+						.block-img
+							background-color: #80542F
+					&:nth-child(183)
+						.block-img
+							background-color: #8F4E35
+					&:nth-child(184)
+						.block-img
+							background-color: #6F4A2F
+					&:nth-child(185)
+						.block-img
+							background-color: #6F4F28
+					&:nth-child(186)
+						.block-img
+							background-color: #5A3A29
+					&:nth-child(187)
+						.block-img
+							background-color: #673831
+					&:nth-child(188)
+						.block-img
+							background-color: #633A34
+					&:nth-child(189)
+						.block-img
+							background-color: #555D61
+					&:nth-child(190)
+						.block-img
+							background-color: #4C2F26
+					&:nth-child(191)
+						.block-img
+							background-color: #44322D
+					&:nth-child(192)
+						.block-img
+							background-color: #3F3A3A
+					&:nth-child(193)
+						.block-img
+							background-color: #211F20
+					&:nth-child(194)
+						.block-img
+							background-color: #A65E2F
+					&:nth-child(195)
+						.block-img
+							background-color: #79553C
+					&:nth-child(196)
+						.block-img
+							background-color: #755C49
+					&:nth-child(197)
+						.block-img
+							background-color: #4E3B2B
+					&:nth-child(198)
+						.block-img
+							background-color: #773C27
+
+					&:nth-child(199)
+						.block-img
+							background-color: #EFEBDC
+					&:nth-child(200)
+						.block-img
+							background-color: #DDDED4
+					&:nth-child(201)
+						.block-img
+							background-color: #F4F8F4
+					&:nth-child(202)
+						.block-img
+							background-color: #2E3032
+					&:nth-child(203)
+						.block-img
+							background-color: #0A0A0D
+					&:nth-child(204)
+						.block-img
+							background-color: #A5A8A6
+					&:nth-child(205)
+						.block-img
+							background-color: #8F8F8C
+					&:nth-child(206)
+						.block-img
+							background-color: #F7F9EF
+					&:nth-child(207)
+						.block-img
+							background-color: #292C2F
+					&:nth-child(208)
+						.block-img
+							background-color: #F7FBF5
+					&:nth-child(209)
+						.block-img
+							background-color: #2A2D2F
+					&:nth-child(210)
+						.block-img
+							background-color: #CFD3CD
+					&:nth-child(211)
+						.block-img
+							background-color: #9C9C9C
+					&:nth-child(212)
+						.block-img
+							background-color: #7E8182
+
+
+	#review
+		padding: 0 0 70px 0
+		.container
+			flex-direction: column
+			h2
+				text-align: center
+				padding: 70px 0 15px 0
+				margin-bottom: 55px
+				&:before
+					content: ''
+					height: 3px
+					width: 200px
+					position: absolute
+					bottom: 0
+					background: linear-gradient(to right, #ff5200 0%,#ff5200 50%,#000000 50%,#000000 100%)
+					right: 0
+					left: 0
+					margin: auto
+			.review-carousel
+				max-width:  100%
+				padding: 0 34px
+				margin: auto
+				text-align: center
+				box-sizing: border-box
+				display: flex
+				.carousel_item
+					width: 340px
+					display: flex
+					flex-direction: column
+					align-items: center
+					margin: auto
+					text-align: center
+					position: relative
+					cursor: pointer
+					.block-img
+						border: 1px solid $accent
+						border-radius: 50%
+						margin-bottom: 40px
+						-webkit-box-shadow: 0 3px 3px 0px #b7b7b7
+						box-shadow: 0 3px 3px 0px #b7b7b7
+						width: 207px
+						height: 207px
+					.block-text
+						-webkit-border-radius: 10px
+						-moz-border-radius: 10px
+						border-radius: 10px
+						border: 1px solid $accent
+						height: 394px
+						padding: 19px 10px 10px 10px
+						-webkit-box-shadow: 0 3px 3px 0px #b7b7b7
+						box-shadow: 0 3px 3px 0px #b7b7b7
+						margin-bottom: 10px
+						h5
+							font-family: $title-font
+							font-style: italic
+							text-decoration: underline
+							font-size: 21px
+							margin-bottom: 15px
+						p
+							font-size: 16px
+							font-family: $text-font
+							line-height: 29px
+				.owl-nav
+					display: block
+					.owl-next, .owl-prev
+						position: absolute
+						display: block
+						right: 0
+						top: 45%
+						background-color: rgba(252,250,250,.32)
+						width: 23px
+						height: 44px
+						transition: .3s ease
+						box-sizing: border-box
+						.fa
+							color: $accent
+							opacity: .7
+							font-size: 42px
+							height: 100%
+							width: 100%
+							text-align: center
+						&:hover
+							background: $accent
+							border-color: #fff
+							.fa
+								color: #fff
+					.owl-prev
+						right: 0
+						left: 0
+	.phone-callback
+		padding: 70px 0
+		.container
+			flex-direction: column
+			align-items: center
+			p
+				font-size: 20px
+				text-transform: uppercase
+			a
+				font-size: 35px
+				font-family: $title-font
+				color: $accent
+				margin: 20px 0
+			button
+				width: 180px
+				height: 44px
+				text-transform: uppercase
+				margin-top: 20px
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					background: url("../img/bg4.png") no-repeat
+					width: 300px
+					height: 135px
+					top: -56px
+					left: 5px
+
+//Футер
+footer
+	display: flex
+	flex-direction: column
+	background-color: #000
+	.container
+		flex-direction: row
+		justify-content: space-between
+		color: #8c8c8c
+		h3
+			text-transform: uppercase
+			font-size: 25px
+			color: #fff
+			margin-bottom: 20px
+		.contacts
+			display: flex
+			flex-direction: column
+			width: 230px
+			.address
+				position: relative
+				padding-left: 20px
+				line-height: 20px
+				&:before
+					content: '\f015'
+					font-family: 'fontawesome', sans-serif
+					position: absolute
+					left: 0
+					color: #8c8c8c
+			a
+				position: relative
+				color: #fff
+				padding-left: 20px
+				span
+					color: #8c8c8c
+			.phone, .mail
+				transition: .3s ease
+				&:before
+					content: '\f098'
+					font-family: 'fontawesome', sans-serif
+					position: absolute
+					left: 0
+					color: #8c8c8c
+				&:hover
+					color: $accent
+			.phone
+				margin: 5px 0
+			.mail
+				&:before
+					content: '\f0e0'
+		.price
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			width: 470px
+			.block-nav
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				ul
+					li
+						font-size: 13px
+						font-family: 'OpenSansRegularItalic', sans-serif
+						font-style: italic
+						position: relative
+						padding-left: 20px
+						cursor: pointer
+						transition: .3s ease
+						&:hover
+							color: $accent
+							&:before
+								background-color: $accent
+						&:before
+							content: ''
+							width: 10px
+							height: 10px
+							background: #8c8c8c
+							position: absolute
+							left: 0
+							bottom: 0
+							top: 0
+							margin: auto
+		.maps
+			width: 350px
+			height: 150px
+
+		&:nth-child(2)
+			flex-direction: column
+			align-items: center
+			margin-top: 20px
+			.social
+				margin-right: 100px
+				position: relative
+				&:before
+					content: ''
+					background: url("../img/line-bg.png") no-repeat
+					width: 746px
+					height: 15px
+					right: -80px
+					position: absolute
+					bottom: -7px
+			.cop
+				//text-align: center
+				color: #8c8c8c
+				font-size: 14px
+				margin-top: 10px
+				font-family: $text-font
+
+
+//анимированная трубка
+#popup__toggle
+	bottom: 25px
+	right: 7px
+	position: fixed
+	z-index: 999
+
+.img-circle
+	background-color: #29AEE3
+	box-sizing: content-box
+	-webkit-box-sizing: content-box
+
+.circlephone
+	box-sizing: content-box
+	-webkit-box-sizing: content-box
+	border: 2px solid #29AEE3
+	width: 150px
+	height: 150px
+	bottom: -25px
+	right: 10px
+	position: absolute
+	-webkit-border-radius: 100%
+	-moz-border-radius: 100%
+	border-radius: 100%
+	opacity: 1
+	-webkit-animation: circle-anim 2.4s infinite ease-in-out !important
+	-moz-animation: circle-anim 2.4s infinite ease-in-out !important
+	-ms-animation: circle-anim 2.4s infinite ease-in-out !important
+	-o-animation: circle-anim 2.4s infinite ease-in-out !important
+	animation: circle-anim 2.4s infinite ease-in-out !important
+	-webkit-transition: all .5s
+	-moz-transition: all .5s
+	-o-transition: all .5s
+	transition: all 0.5s
+
+.circle-fill
+	box-sizing: content-box
+	-webkit-box-sizing: content-box
+	background-color: #29AEE3
+	width: 100px
+	height: 100px
+	bottom: 0px
+	right: 35px
+	position: absolute
+	-webkit-border-radius: 100%
+	-moz-border-radius: 100%
+	border-radius: 100%
+	border: 2px solid transparent
+	-webkit-animation: circle-fill-anim 2.3s infinite ease-in-out
+	-moz-animation: circle-fill-anim 2.3s infinite ease-in-out
+	-ms-animation: circle-fill-anim 2.3s infinite ease-in-out
+	-o-animation: circle-fill-anim 2.3s infinite ease-in-out
+	animation: circle-fill-anim 2.3s infinite ease-in-out
+	-webkit-transition: all .5s
+	-moz-transition: all .5s
+	-o-transition: all .5s
+	transition: all 0.5s
+
+.img-circle
+	box-sizing: content-box
+	-webkit-box-sizing: content-box
+	width: 72px
+	height: 72px
+	bottom: 14px
+	right: 49px
+	position: absolute
+	-webkit-border-radius: 100%
+	-moz-border-radius: 100%
+	border-radius: 100%
+	border: 2px solid transparent
+	opacity: 1
+
+.img-circleblock
+	box-sizing: content-box
+	-webkit-box-sizing: content-box
+	width: 72px
+	height: 72px
+	background: url('../img/mini.png') no-repeat center
+	animation-name: tossing
+	-webkit-animation-name: tossing
+	animation-duration: 1.5s
+	-webkit-animation-duration: 1.5s
+	animation-iteration-count: infinite
+	-webkit-animation-iteration-count: infinite
+
+.img-circle:hover
+	opacity: 1
+
+@keyframes pulse
+	0%
+		transform: scale(0.9)
+		opacity: 1
+
+	50%
+		transform: scale(1)
+		opacity: 1
+
+	100%
+		transform: scale(0.9)
+		opacity: 1
+
+
+@-webkit-keyframes pulse
+	0%
+		-webkit-transform: scale(0.95)
+		opacity: 1
+
+	50%
+		-webkit-transform: scale(1)
+		opacity: 1
+
+	100%
+		-webkit-transform: scale(0.95)
+		opacity: 1
+
+
+@keyframes tossing
+	0%
+		transform: rotate(-8deg)
+
+	50%
+		transform: rotate(8deg)
+
+	100%
+		transform: rotate(-8deg)
+
+
+@-webkit-keyframes tossing
+	0%
+		-webkit-transform: rotate(-8deg)
+
+	50%
+		-webkit-transform: rotate(8deg)
+
+	100%
+		-webkit-transform: rotate(-8deg)
+
+
+@-moz-keyframes circle-anim
+	0%
+		-moz-transform: rotate(0deg) scale(0.5) skew(1deg)
+		opacity: .1
+		-moz-opacity: .1
+		-webkit-opacity: .1
+		-o-opacity: .1
+
+	30%
+		-moz-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .5
+		-moz-opacity: .5
+		-webkit-opacity: .5
+		-o-opacity: .5
+
+	100%
+		-moz-transform: rotate(0deg) scale(1) skew(1deg)
+		opacity: .6
+		-moz-opacity: .6
+		-webkit-opacity: .6
+		-o-opacity: .1
+
+
+@-webkit-keyframes circle-anim
+	0%
+		-webkit-transform: rotate(0deg) scale(0.5) skew(1deg)
+		-webkit-opacity: .1
+
+	30%
+		-webkit-transform: rotate(0deg) scale(0.7) skew(1deg)
+		-webkit-opacity: .5
+
+	100%
+		-webkit-transform: rotate(0deg) scale(1) skew(1deg)
+		-webkit-opacity: .1
+
+
+@-o-keyframes circle-anim
+	0%
+		-o-transform: rotate(0deg) kscale(0.5) skew(1deg)
+		-o-opacity: .1
+
+	30%
+		-o-transform: rotate(0deg) scale(0.7) skew(1deg)
+		-o-opacity: .5
+
+	100%
+		-o-transform: rotate(0deg) scale(1) skew(1deg)
+		-o-opacity: .1
+
+
+@keyframes circle-anim
+	0%
+		transform: rotate(0deg) scale(0.5) skew(1deg)
+		opacity: .1
+
+	30%
+		transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .5
+
+	100%
+		transform: rotate(0deg) scale(1) skew(1deg)
+		opacity: .1
+
+
+@-moz-keyframes circle-fill-anim
+	0%
+		-moz-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+	50%
+		-moz-transform: rotate(0deg) -moz-scale(1) skew(1deg)
+		opacity: .2
+
+	100%
+		-moz-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+
+@-webkit-keyframes circle-fill-anim
+	0%
+		-webkit-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+	50%
+		-webkit-transform: rotate(0deg) scale(1) skew(1deg)
+		opacity: .2
+
+	100%
+		-webkit-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+
+@-o-keyframes circle-fill-anim
+	0%
+		-o-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+	50%
+		-o-transform: rotate(0deg) scale(1) skew(1deg)
+		opacity: .2
+
+	100%
+		-o-transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+
+@keyframes circle-fill-anim
+	0%
+		transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+	50%
+		transform: rotate(0deg) scale(1) skew(1deg)
+		opacity: .2
+
+	100%
+		transform: rotate(0deg) scale(0.7) skew(1deg)
+		opacity: .2
+
+/* Модальное окно
+#modal_form
+	width: 300px
+	height: 340px
+	/* Рaзмеры дoлжны быть фиксирoвaны
+	border-radius: 5px
+	border: 3px #000 solid
+	background: #fff
+	position: fixed
+	/* чтoбы oкнo былo в видимoй зoне в любoм месте
+	top: 45%
+	/* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт
+	left: 50%
+	/* пoлoвинa экрaнa слевa
+	margin-top: -150px
+	margin-left: -150px
+	/* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =)
+	display: none
+	/* в oбычнoм сoстoянии oкнa не дoлжнo быть
+	opacity: 0
+	/* пoлнoстью прoзрaчнo для aнимирoвaния
+	z-index: 100
+	/* oкнo дoлжнo быть нaибoлее бoльшем слoе
+	padding: 20px 10px
+	#modal_close
+		width: 30px
+		height: 30px
+		position: absolute
+		top: -15px
+		right: -16px
+		cursor: pointer
+		display: flex
+		align-items: center
+		justify-content: center
+		background: #fff
+		border-radius: 50%
+	.modal_form
+		text-align: center
+		margin: 20px auto
+		h3
+			margin-bottom: 20px
+			font-size: 16px
+		input
+			width: 250px
+			height: 50px
+			margin: 0 auto 13px
+			padding-left: 15px
+			font-size: 1.125em
+			color: #000
+			font-family: $default-font
+			background: transparent
+			border-radius: 5px
+			border: 2px solid $accent
+			position: relative
+		*::-webkit-input-placeholder
+			color: #000
+		*:-moz-placeholder
+			color: #000
+		*::-moz-placeholder
+			color: #000
+		*:-ms-input-placeholder
+			color: #000
+		button
+			width: 270px
+			height: 50px
+			border-radius: 5px
+			font-size: 1em
+			color: #fff
+			background-color: $accent
+			transition: all .5s ease
+			&:before
+				display: none
+
+
+/* Пoдлoжкa
+
+#overlay
+	z-index: 48
+	/* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa
+	position: fixed
+	/* всегдa перекрывaет весь сaйт
+	background-color: #000
+	/* чернaя
+	opacity: 0.8
+	/* нo немнoгo прoзрaчнa
+	-moz-opacity: 0.8
+	/* фикс прозрачности для старых браузеров
+	filter: alpha(opacity = 80)
+	width: 100%
+	height: 100%
+	/* рaзмерoм вo весь экрaн
+	top: 0
+	/* сверху и слевa 0, oбязaтельные свoйствa!
+	left: 0
+	cursor: pointer
+	display: none
+/* в oбычнoм сoстoянии её нет)
+
+/****Прелоадер******/
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 1000
+	background-color: #000
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin:
+			left: -40px
+			right: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #0ea5b4
+			width: 80px
+			height: 80px
+			-webkit-border-radius: 500px
+			-moz-border-radius: 500px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
+@import "media" // Всегда в конце

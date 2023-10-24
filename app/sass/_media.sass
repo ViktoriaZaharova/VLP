@@ -1,0 +1,402 @@
+@import "bourbon"
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  .container
+    width: 100%
+    padding: 0 10px
+
+  .content
+    .page-carousel
+      .header-slider
+        .owl-nav
+          .owl-prev
+            left: 1%
+          .owl-next
+            right: 1%
+    .callback .container
+      padding: 55px 10px 53px 10px
+
+@media screen and (max-width: 1100px)
+  .wrapper
+    header
+      height: auto
+      .container
+        flex-wrap: wrap
+        justify-content: space-around
+        .mnu-line
+          margin: 10px 0 15px 0
+
+  .content
+    .page-carousel
+      .header-slider
+        max-height: 573px
+      .block-arrows
+        bottom: 30px
+    #about
+      &:before, &:after
+        display: none
+      .container
+        flex-direction: column
+        align-items: center
+        padding: 0
+        .block-left
+          padding: 50px 15px
+          width: 100%
+          background: #f2f2f2 url("../img/bg2.png") no-repeat 500px bottom
+        .block-right
+          width: 100%
+          align-items: center
+          padding: 50px 0
+          background-color: #000
+    #services
+      .container
+        .block-content
+          .line-one, .line-two
+            justify-content: space-around
+            .item
+              margin-bottom: 20px
+    .callback
+      -webkit-background-size: cover
+      background-size: cover
+      .container
+        flex-direction: column
+        align-items: center
+        padding: 20px 10px
+        .block-left
+          text-align: center
+        .form
+          margin-top: 20px
+    #ral
+      .container
+        p
+          font-size: 18px
+          line-height: 28px
+    .phone-callback
+      padding-top: 0
+
+  footer
+    .container
+      .price
+        width: 300px
+        .block-nav
+          flex-direction: column
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .content
+    .page-carousel
+      .block-title
+        width: calc(100% - 60px)
+        width: -moz-calc(100% - 60px)
+        width: -webkit-calc(100% - 60px)
+        .container
+          width: 100%
+          padding: 30px 40px
+          p
+            font-size: 18px
+    .about-bottom
+      .container
+        padding: 0
+        .block-bottom
+          margin: 0
+          width: 100%
+          flex-wrap: wrap
+          justify-content: space-around
+
+
+@media screen and (max-width: 900px)
+  h1
+    font-size: 40px
+
+  .about-bottom
+    .container
+      .block-bottom
+        padding-bottom: 0
+        .item
+          margin-bottom: 20px
+
+  .content
+    #review
+      .container
+        .review-carousel
+          .carousel_item
+            width: 320px
+            .block-img
+              width: 150px
+              height: 150px
+            .block-text
+              height: 350px
+              p
+                font-size: 14px
+                line-height: 24px
+
+  footer .container .price
+    display: none
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  .content
+    .page-carousel
+      .header-slider
+        .owl-nav
+          display: none
+      .block-title
+        width: 100%
+        .container
+          margin: 0
+      .block-arrows
+        display: none
+    #about
+      .container
+        .block-left
+          background-position: 400px bottom
+          p
+            margin-bottom: 15px
+            font-size: 14px
+    .callback
+      .container
+        form
+          .user-phone
+            margin: 0 10px
+    .phone-callback .container p
+      text-align: center
+
+@media screen and (max-width: 670px)
+  .content
+    .callback
+      .container
+        .form
+          display: flex
+          flex-direction: column
+          align-items: center
+          .user-phone
+            margin: 10px 0
+          .name, button
+            width: 270px
+
+@media screen and (max-width: 630px)
+  .wrapper
+    header
+      .container
+        .mnu-line
+          margin: 0
+          ul
+            display: none
+            &:before
+              display: none
+            li
+              &:nth-child(1)
+                justify-content: center
+              &:last-child
+                justify-content: center
+                margin-bottom: 5px
+              a
+                width: 100%
+                text-align: center
+          #mobile_mnu
+            display: flex !important
+            position: relative
+            align-items: center
+            justify-content: center
+            text-transform: uppercase
+            text-decoration: underline
+            font-weight: bolder
+            font-size: 20px
+            min-height: 48px
+            color: $accent
+            cursor: pointer
+            border-top: 1px solid #fff
+            border-bottom: 1px solid #fff
+            &:before
+              content: '\f0c9'
+              position: absolute
+              font-family: 'fontawesome', sans-serif
+              left: 39%
+
+  #popup__toggle
+    display: none
+
+  .content
+    .page-carousel
+      .block-title
+        height: 300px
+        .container
+          height: 300px
+          padding: 15px
+          h1
+            font-size: 30px
+            span
+              line-height: 26px
+          p
+            font-size: 14px
+            line-height: 18px
+          button
+            width: 300px
+            font-size: 14px
+          a
+            font-size: 30px
+    #about
+      .container
+        .block-right
+          .item
+            width: 100%
+            justify-content: center
+            padding: 0 10px
+            .block-img
+              min-width: 70px
+              margin-right: 15px
+    .about-bottom
+      .container
+        .block-bottom
+          padding: 15px 15px 0 15px
+
+  footer
+    .container
+      flex-direction: column
+      align-items: center
+      .contacts
+        margin-bottom: 15px
+      .maps
+        width: 100%
+
+@media screen and (max-width: 575px)
+  .content
+    .about-bottom
+      .container
+        .block-bottom
+          flex-direction: column
+          align-items: center
+          .item
+            width: 100%
+    #services
+      margin-bottom: 0
+      .container
+        h2
+          margin-bottom: 30px
+        .block-content
+          .line-one, .line-two
+            flex-direction: column
+            align-items: center
+            .item
+              .block-text
+                min-height: auto
+
+@media screen and (max-width: 530px)
+  .content
+    .page-carousel
+      .header-slider
+        background: url("../img/slide12.jpg") no-repeat center
+        -webkit-background-size: cover
+        background-size: cover
+        height: 600px
+        .carousel_item
+          display: none
+    #ral
+      padding-bottom: 50px
+      .container
+        p
+          font-size: 16px
+          line-height: 24px
+
+@media screen and (max-width: 500px)
+  .wrapper
+    header
+      .container
+        .logo
+          max-width: 160px
+
+  h2
+    font-size: 35px
+    line-height: 40px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .wrapper
+    header
+      .container
+        flex-direction: column
+
+  .content
+    .page-carousel
+      .block-title
+        .container
+          padding: 10px 0
+    #portfolio
+      .container
+        h2
+          padding-top: 50px
+          margin-bottom: 50px
+    #review
+      padding-bottom: 50px
+      .container
+        .review-carousel
+          padding: 0 15px
+          .carousel_item
+            width: 100%
+            .block-img
+              width: 150px
+              height: 150px
+            .block-text
+              height: 330px
+          .owl-nav
+            display: none
+
+@media screen and (max-width: 400px)
+  .content
+    .page-carousel
+      .block-title
+        .container
+          h1
+            line-height: 44px
+            font-size: 35px
+            margin-bottom: 5px
+            span
+              font-size: 26px
+          p
+            margin: 10px 5px
+          a
+            margin: 10px 0
+    .phone-callback .container button:before
+      display: none
+
+  footer
+    .container:nth-child(2)
+      .social
+        margin-right: 0
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 350px)
+  .content #review .container .review-carousel .carousel_item .block-text p
+    line-height: 22px
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
